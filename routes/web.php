@@ -25,7 +25,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/guru/detail/{id_guru}', [GuruController::class, 'detail']);
     Route::get('/guru/add', [GuruController::class, 'addGuru']);
     Route::post('/guru/insert', [GuruController::class, 'insert']);
-    Route::get('/guru/edit/{id_guru}', [GuruController::class, 'edit']);
+    Route::get('/guru/edit/{id_guru}', [GuruController::class, 'editGuru']);
     Route::post('/guru/update/{id_guru}', [GuruController::class, 'update']);
     Route::get('/guru/delete/{id_guru}', [GuruController::class, 'delete']);
 
@@ -37,24 +37,6 @@ Route::group(['middleware' => 'admin'], function () {
 });
 
 Route::group(['middleware' => 'operator'], function () {
-    Route::get('/koperasi', [KoperasiController::class, 'index']);
-    Route::get('/koperasi/print', [KoperasiController::class, 'print']);
-    Route::get('/koperasi/printpdf', [KoperasiController::class, 'printpdf']);
-});
-
-Route::group(['middleware' => 'owner'], function () {
-    Route::get('/guru', [GuruController::class, 'index'])->name('guru');
-    Route::get('/guru/detail/{id_guru}', [GuruController::class, 'detail']);
-    Route::get('/guru/add', [GuruController::class, 'addGuru']);
-    Route::post('/guru/insert', [GuruController::class, 'insert']);
-    Route::get('/guru/edit/{id_guru}', [GuruController::class, 'editGuru']);
-    Route::post('/guru/update/{id_guru}', [GuruController::class, 'update']);
-    Route::get('/guru/delete/{id_guru}', [GuruController::class, 'delete']);
-
-    Route::get('/siswa', [SiswaController::class, 'index']);
-
-    Route::get('/user', [UserController::class, 'index'])->name('user');
-
     Route::get('/koperasi', [KoperasiController::class, 'index']);
     Route::get('/koperasi/print', [KoperasiController::class, 'print']);
     Route::get('/koperasi/printpdf', [KoperasiController::class, 'printpdf']);
