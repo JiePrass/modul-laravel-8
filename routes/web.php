@@ -32,7 +32,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/siswa', [SiswaController::class, 'index']);
 });
 
-Route::group(['middleware' => 'admin'], function () {
+Route::group(['middleware' => 'user'], function () {
     Route::get('/user', [UserController::class, 'index'])->name('user');
 });
 
