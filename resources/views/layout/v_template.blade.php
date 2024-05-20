@@ -184,7 +184,8 @@
                                         <a href="#" class="btn btn-default btn-flat">Profile</a>
                                     </div>
                                     <div class="pull-right">
-                                        <form action="{{route('logout')}}" class="d-none" id="logout-form" method="post">
+                                        <form action="{{route('logout')}}" class="d-none" id="logout-form"
+                                            method="post">
                                             @csrf
                                             <button class="btn btn-default btn-flat">Log Out</button>
                                         </form>
@@ -214,15 +215,13 @@
                         <p>{{Auth::user()->name}}</p>
                         <a href="#"><i class="fa fa-circle text-success"></i>
                             @if(auth()->user()->level == 1)
-                                    Admin
-                                @elseif(auth()->user()->level == 2)
-                                        User
-                                        @elseif(auth()->user()->level == 3)
-                                            Operator
-                                            @elseif(auth()->user()->level == 4)
-                                                Owner
-                                                @else
-                                                    Lu Siapa?
+                                Admin
+                            @elseif(auth()->user()->level == 2)
+                                User
+                            @elseif(auth()->user()->level == 3)
+                                Operator
+                            @else
+                                Lu Siapa?
                             @endif
                         </a>
                     </div>
